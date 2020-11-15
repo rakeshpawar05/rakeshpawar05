@@ -13,23 +13,41 @@
             <p>By Rakesh Pawar</p>
         </div>
 
+        <div class="message">
+            <div id="correctans"> Correct</div>
+            <div id="wrongans"> Try Again</div>
+        </div>
+
         <div id="gamebox">
             <div class="left">
-                <div id="question">
-
+                <div id="questionbox">
+                    <p class="q">Question</p>
+                    <p id="question"></p>
+                    <p class="a">Choose the correct answer</p>
                 </div>
                 <div id="answers">
-
+                    <div id="box1"></div>
+                    <div id="box2"></div>
+                    <div id="box3"></div>
+                    <div id="box4"></div>
                 </div>
             </div>
             <div class="right">
-                <div id="score"></div>
-                <div id="lives"></div>
-                <div id="time"></div>
-                <div id="start"></div>
+                <div id="score"> Score : <span id="scores">0</span></div>
+                <div id="live"> Lives : <span id="lives">3</span></div>
+                <div id="time"> Time : <span id="timeremaining">60</span></div>
+                <div id="start"> START </div>
             </div>
         </div>
 
+        <div id="gameover">
+            <p>Game Over!</p>
+            <p>Your score is <span id="lastscore"></span></p>
+        </div>
+
     </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
