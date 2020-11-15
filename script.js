@@ -29,7 +29,7 @@ document.getElementById("start").onclick = () => {
 
 document.getElementById("box1").onclick = () => {
     value = document.getElementById("box1").innerHTML;
-    if (playing = true) {
+    if (playing == true) {
         if (value == correctanswer){
             score += 1;
             document.getElementById("scores").innerHTML = score;
@@ -50,12 +50,14 @@ document.getElementById("box1").onclick = () => {
                 hidebox("wrongans");
             }, 1000);
         }
+    } else {
+        alert("Please start the Game first!")
     }
 }
 
 document.getElementById("box2").onclick = () => {
     value = document.getElementById("box2").innerHTML;
-    if (playing = true) {
+    if (playing == true) {
         if (value == correctanswer){
             score += 1;
             document.getElementById("scores").innerHTML = score;
@@ -76,12 +78,14 @@ document.getElementById("box2").onclick = () => {
                 hidebox("wrongans");
             }, 1000);
         }
+    } else {
+        alert("Please start the Game first!")
     }
 }
 
 document.getElementById("box3").onclick = () => {
     value = document.getElementById("box3").innerHTML;
-    if (playing = true) {
+    if (playing == true) {
         if (value == correctanswer){
             score += 1;
             document.getElementById("scores").innerHTML = score;
@@ -102,12 +106,15 @@ document.getElementById("box3").onclick = () => {
                 hidebox("wrongans");
             }, 1000);
         }
+    } else {
+        alert("Please start the Game first!")
     }
+
 }
 
 document.getElementById("box4").onclick = () => {
     value = document.getElementById("box4").innerHTML;
-    if (playing = true) {
+    if (playing == true) {
         if (value == correctanswer){
             score += 1;
             document.getElementById("scores").innerHTML = score;
@@ -128,8 +135,14 @@ document.getElementById("box4").onclick = () => {
                 hidebox("wrongans");
             }, 1000);
         }
+    } else {
+        alert("Please start the Game first!")
     }
+
 }
+
+
+
 
 const gameover = () => {
     document.getElementById("lastscore").innerHTML = score;

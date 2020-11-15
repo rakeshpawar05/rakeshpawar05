@@ -5,8 +5,8 @@
 body {
     padding: 0;
     margin: 0;
-    background: linear-gradient(to top left, #EFC1C1, #EFEBA8) no-repeat;
-
+    /* background: linear-gradient(to top left, #EFC1C1, #EFEBA8) no-repeat; */
+    background-color: #FFFFFF;
 }
 .container {
     padding: 0;
@@ -31,31 +31,34 @@ body {
     margin-right: 40px;
 }
 
-#correctans {
-    border: 1px solid black;
+#correctans, #wrongans {
     position: absolute;
     height: 50px;
     width: 150px;
     left: 550px;
     top: 90px;
     z-index: 1;
+    text-align: center;
+    line-height: 45px;
+    font-size:20px;
+    border-radius: 10px;
+}
+#correctans {
+    background-color: #6BF178;
+    box-shadow: 5px 5px 5px #B4F8BB;
     display: none;
+    
 }
 
 #wrongans {
-    border: 1px solid black;
-    position: absolute;
-    height: 50px;
-    width: 150px;
-    left: 550px;
-    top: 90px;
-    z-index: 1;
+    background-color: #FF4754;
+    box-shadow: 5px 5px 5px #FF99A0;
     display: none;
 }
 
 #gamebox {
-    background-color: #EFC1C1;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+    background-color: #D7BCE8;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
     position: absolute;
     height: 600px;
     width: 70%;
@@ -66,7 +69,6 @@ body {
 }
 
 .left {
-    border: 1px solid black;
     width: 80%;
     margin: 30px 0px 30px 30px;
     padding: 30px;
@@ -75,15 +77,16 @@ body {
 }
 
 .left #questionbox {
-    border: 1px solid black;
     height: 70%;
     margin-bottom: 20px;
 }
 
 #questionbox #question {
-    border: 1px solid black;
+    background-color: #8884FF;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
     height: 240px;
     padding: 0px 20px;
+    border-radius: 10px;
     text-align: center;
     font-size: 200px;
     line-height: 220px;
@@ -94,21 +97,22 @@ body {
 }
 
 .left #answers {
-    border: 1px solid black;
     height: 30%;
     display: flex;
     padding: 20px 0 ;
 }
 
 #box1, #box2, #box3, #box4 {
-    border: 1px solid black;
-    background: linear-gradient(to top right,);
+    background-color: #68B684;
     flex: 1;
     margin-right: 10px;
     border-radius: 10px;
     text-align: center;
     line-height: 100px;
     font-size: 30px;
+    transition: flex 0.5s ease-in-out;
+    transition: font-size 0.5s;
+    transition: background-color 0.3s ease-in;
 
 }
 /* #box2 {
@@ -124,14 +128,19 @@ body {
 } */
 
 #box4 {
-    border: 1px solid black;
     flex: 1;
     margin-right: 0px;
 }
 
+#box1:hover, #box2:hover, #box3:hover, #box4:hover {
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    flex: 1.1;
+    cursor: pointer;
+    font-size: 35px;
+    background-color: #95E06C;
+}
 
 .right {
-    border: 1px solid black;
     width: 20%;
     margin: 30px;
     padding: 20px;
@@ -142,35 +151,48 @@ body {
 }
 
 .right #score {
-    border: 1px solid black;
+    background-color: #C3F73A;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
     flex: 1;
     margin: 30px 10px;
 }
 
 
 .right #live {
-    border: 1px solid black;
-    flex: 1;
+    background-color: #00BFB2;
+    border-radius: 10px;
+    flex: 1;    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
     margin: 30px 10px;
 }
 
 .right #time {
-    border: 1px solid black;
     flex: 1;
-    margin: 30px 10px;
+    background-color: #FFAD69;
+    border-radius: 10px;
+    margin: 30px 10px;    
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
 }
 
 .right #start {
-    border: 1px solid black;
     flex: 1;
+    background-color: #F5E663;
+    border-radius: 10px;
     margin: 30px 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
 }
 
+#start:hover {
+    cursor: pointer;
+}
+
+
 #gameover {
-    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #FF4754;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
     width: 500px;
     height: 300px;
-    background-color: blanchedalmond;
     z-index: 1;
     position: absolute;
     top: 220px;
