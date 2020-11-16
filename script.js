@@ -5,6 +5,7 @@ var correctanswer ;
 var lives = 3;
 var timeinterval ;
 var value;
+var answers;
 
 document.getElementById("start").onclick = () => {
     if (playing == true) {
@@ -27,121 +28,36 @@ document.getElementById("start").onclick = () => {
     }
 }
 
-document.getElementById("box1").onclick = () => {
-    value = document.getElementById("box1").innerHTML;
-    if (playing == true) {
-        if (value == correctanswer){
-            score += 1;
-            document.getElementById("scores").innerHTML = score;
-            showbox("correctans");
-            setTimeout(() => {
-                hidebox("correctans");
-            }, 1000);
-            generateQA();
-        } else {
-            showbox("wrongans");
-            lives -= 1 ;
-            document.getElementById("lives").innerHTML = lives;
-            if (lives == 0) {
-                gameover();
-                clearInterval(timeinterval);
+
+for (let i = 1; i < 5; i++){
+    document.getElementById("box"+i).onclick = () => {
+        value = document.getElementById("box"+i).innerHTML;
+        if (playing == true) {
+            if (value == correctanswer){
+                score += 1;
+                document.getElementById("scores").innerHTML = score;
+                showbox("correctans");
+                setTimeout(() => {
+                    hidebox("correctans");
+                }, 1000);
+                generateQA();
+            } else {
+                showbox("wrongans");
+                lives -= 1 ;
+                document.getElementById("lives").innerHTML = lives;
+                if (lives == 0) {
+                    gameover();
+                    clearInterval(timeinterval);
+                }
+                setTimeout(() => {
+                    hidebox("wrongans");
+                }, 1000);
             }
-            setTimeout(() => {
-                hidebox("wrongans");
-            }, 1000);
+        } else {
+            alert("Please start the Game first!")
         }
-    } else {
-        alert("Please start the Game first!")
     }
 }
-
-document.getElementById("box2").onclick = () => {
-    value = document.getElementById("box2").innerHTML;
-    if (playing == true) {
-        if (value == correctanswer){
-            score += 1;
-            document.getElementById("scores").innerHTML = score;
-            showbox("correctans");
-            setTimeout(() => {
-                hidebox("correctans");
-            }, 1000);
-            generateQA();
-        } else {
-            showbox("wrongans");
-            lives -= 1 ;
-            document.getElementById("lives").innerHTML = lives;
-            if (lives == 0) {
-                gameover();
-                clearInterval(timeinterval);
-            }
-            setTimeout(() => {
-                hidebox("wrongans");
-            }, 1000);
-        }
-    } else {
-        alert("Please start the Game first!")
-    }
-}
-
-document.getElementById("box3").onclick = () => {
-    value = document.getElementById("box3").innerHTML;
-    if (playing == true) {
-        if (value == correctanswer){
-            score += 1;
-            document.getElementById("scores").innerHTML = score;
-            showbox("correctans");
-            setTimeout(() => {
-                hidebox("correctans");
-            }, 1000);
-            generateQA();
-        } else {
-            showbox("wrongans");
-            lives -= 1 ;
-            document.getElementById("lives").innerHTML = lives;
-            if (lives == 0) {
-                gameover();
-                clearInterval(timeinterval);
-            }
-            setTimeout(() => {
-                hidebox("wrongans");
-            }, 1000);
-        }
-    } else {
-        alert("Please start the Game first!")
-    }
-
-}
-
-document.getElementById("box4").onclick = () => {
-    value = document.getElementById("box4").innerHTML;
-    if (playing == true) {
-        if (value == correctanswer){
-            score += 1;
-            document.getElementById("scores").innerHTML = score;
-            showbox("correctans");
-            setTimeout(() => {
-                hidebox("correctans");
-            }, 1000);
-            generateQA();
-        } else {
-            showbox("wrongans");
-            lives -= 1 ;
-            document.getElementById("lives").innerHTML = lives;
-            if (lives == 0) {
-                gameover();
-                clearInterval(timeinterval);
-            }
-            setTimeout(() => {
-                hidebox("wrongans");
-            }, 1000);
-        }
-    } else {
-        alert("Please start the Game first!")
-    }
-
-}
-
-
 
 
 const gameover = () => {
@@ -165,7 +81,7 @@ const generateQA = () => {
     correctanswer = x * y ;
     var correctposition = 1 + Math.round(3*Math.random());
     document.getElementById("box"+correctposition).innerHTML = correctanswer ;
-    var answers = [correctanswer];
+    answers = [correctanswer];
     for (i=1; i<5 ; i++) {
         if (i != correctposition) {
             var wronganswer;
